@@ -2,307 +2,360 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Affix24 API Marketplace – Accelerate Innovation with Industry-Grade APIs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Affix24 API Marketplace – APIs as a Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; background: #f8fafc;}
-    .hero-bg {
-      background: linear-gradient(90deg, #2b7cf6 0%, #24b6fa 100%);
+    :root {
+      --affix-bg1: #0b1437;
+      --affix-bg2: #14215c;
+      --affix-grad: linear-gradient(90deg,#2366f2 0%,#954cff 100%);
+      --affix-pink: #ef4fff;
+      --affix-blue: #2366f2;
+      --affix-violet: #6d5be3;
+      --affix-glass: rgba(26, 37, 70, 0.65);
+      --affix-shadow: 0 8px 40px 0 rgba(90,90,255,0.11), 0 2px 4px 0 rgba(20,20,40,0.09);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--affix-bg1);
       color: #fff;
-      padding: 5rem 0 4rem 0;
-      text-align: center;
-      border-radius: 0 0 2.5rem 2.5rem;
+    }
+    /* Navbar */
+    .navbar {
+      background: var(--affix-bg2);
+      box-shadow: 0 2px 18px 0 rgba(50,50,150,0.08);
+    }
+    .navbar-brand {
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: -1px;
+      color: #fff;
+    }
+    .navbar-brand span { color: var(--affix-blue); }
+    .nav-link {
+      color: #d1e0fa !important;
+      margin-right: 1.3rem;
+      font-weight: 600;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--affix-pink) !important; }
+    .btn-affix {
+      background: var(--affix-grad);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 2rem;
+      border: none;
+      box-shadow: 0 3px 16px #5c2efa14;
+      transition: background 0.14s;
+    }
+    .btn-affix:hover { background: linear-gradient(90deg,#4a98f7 0%,#ef4fff 100%);}
+    /* Hero */
+    .hero-section {
+      background: linear-gradient(100deg,#181d45 30%,#2c338a 100%);
+      min-height: 650px;
+      display: flex;
+      align-items: center;
       position: relative;
       overflow: hidden;
+      border-radius: 0 0 2.5rem 2.5rem;
     }
-    .hero-bg .btn-primary {
-      background: #fff; color: #2b7cf6; font-weight: 600; border: none;
-      transition: background 0.18s, color 0.18s;
+    .hero-content {
+      z-index: 2;
     }
-    .hero-bg .btn-primary:hover { background: #e7f1ff; color: #1457ac;}
+    .hero-headline {
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1.13;
+      letter-spacing: -1.2px;
+      margin-bottom: 1.1rem;
+      background: linear-gradient(90deg,#e3e9ff 15%,#fff 60%,#a08dff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-lead {
+      color: #c6cfff;
+      font-size: 1.3rem;
+      margin-bottom: 2.2rem;
+      max-width: 540px;
+    }
+    .hero-btns .btn {
+      font-size: 1.18rem;
+      padding: 0.7em 2.3em;
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-art {
+      position: absolute;
+      right: 4vw; bottom: 0; top: 0;
+      width: 540px; z-index: 1;
+      background: url('https://assets-global.website-files.com/5d4bc7b7a5c1b3723427d388/62c6f3a30b54c94f7ec8fd0d_Agora%20Product%20Hero%20Graphic.svg') no-repeat center/contain;
+      opacity: 0.13;
+      pointer-events: none;
+      filter: blur(0.2px) saturate(1.2);
+    }
+    @media (max-width: 991px) {
+      .hero-section { min-height: 480px; }
+      .hero-art { display: none;}
+    }
+    /* Floating cards */
+    .affix-cards {
+      margin-top: -90px;
+      z-index: 20;
+      position: relative;
+    }
+    .affix-card {
+      background: var(--affix-glass);
+      border-radius: 1.6rem;
+      box-shadow: var(--affix-shadow);
+      padding: 2.2rem 1.7rem 1.7rem 1.7rem;
+      color: #fff;
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(140,125,255,0.06);
+      min-height: 230px;
+      transition: transform 0.16s;
+    }
+    .affix-card:hover { transform: translateY(-7px) scale(1.02);}
+    .affix-card .bi {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, var(--affix-blue), var(--affix-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .section-title {
-      color: #2b7cf6; font-weight: 700; margin-bottom: 1rem;
-      font-size: 2rem; letter-spacing: -.5px;
+      color: #fff; font-weight: 800; font-size: 2rem;
+      letter-spacing: -.5px; margin-bottom: 1.2rem;
     }
-    .icon-circle {
-      background: #e5f1ff; color: #2b7cf6; border-radius: 50%; 
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 56px; height: 56px; font-size: 2rem; margin-bottom: 1rem;
+    .section-title .dot {
+      color: var(--affix-pink);
     }
-    .card {
-      border: none; border-radius: 1.2rem; box-shadow: 0 4px 32px rgba(44,62,80,0.07);
-      margin-bottom: 2rem; background: #fff;
+    /* Use Cases */
+    .use-case-card {
+      background: #151c3b;
+      border-radius: 1.3rem;
+      box-shadow: 0 3px 22px 0 rgba(30,20,90,0.15);
+      padding: 1.6rem 1.2rem;
+      color: #d3deff;
+      border-left: 4px solid var(--affix-blue);
+      margin-bottom: 1.5rem;
     }
-    .card-body { padding: 2rem 1.5rem;}
-    .bg-light-alt { background: #f5fafd;}
-    .lead { font-size: 1.22rem; color: #185ecb;}
-    .industry-badge {
-      background: #24b6fa;
-      color: #fff; border-radius: 0.7rem; padding: 0.35rem 1rem; font-size: 0.95rem;
-      font-weight: 600; letter-spacing: .2px; display: inline-block; margin-bottom: 1.2rem;
+    .use-case-card .bi {
+      color: var(--affix-pink);
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
     }
-    .api-feature-list li::before {
-      content: "✔";
-      color: #24b6fa;
-      font-weight: bold;
-      display: inline-block; width: 1.3em;
+    /* Platform */
+    .platform-cards .affix-card {
+      min-height: 200px;
+      border-left: 5px solid var(--affix-violet);
     }
-    .affix24-logo {
-      font-weight: bold; color: #2b7cf6; font-size: 1.7rem;
-      letter-spacing: -1px;
-      text-shadow: 0 2px 8px rgba(24,120,255,0.1);
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(95deg,#222753 30%,#5547a9 100%);
+      padding: 3.5rem 0;
+      border-radius: 2rem;
+      margin-top: 4rem;
+      text-align: center;
+      box-shadow: 0 6px 32px 0 #1e1a4f18;
     }
-    .navbar { background: #fff; }
-    .navbar-brand span { color: #2b7cf6; }
+    .cta-section .btn-affix { font-size: 1.21rem; padding: 0.72em 2.7em;}
+    /* Footer */
     footer {
-      background: #171c28; color: #fff; padding: 2.2rem 0 1.5rem 0; margin-top: 4rem;
+      background: #161e37;
+      color: #8e98bf;
+      padding: 2.5rem 0 1.6rem 0;
+      margin-top: 4rem;
       border-radius: 2rem 2rem 0 0;
+      font-size: 1rem;
     }
-    .footer-link { color: #8fd1ff; margin-right: 1.3rem; text-decoration: none;}
-    .footer-link:hover { color: #fff;}
+    .footer-link {
+      color: #a9beff;
+      margin-right: 1.6rem;
+      text-decoration: none;
+    }
+    .footer-link:hover { color: var(--affix-pink);}
   </style>
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+<nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
-    <a class="navbar-brand affix24-logo" href="#">Affix24<span> API Marketplace</span></a>
+    <a class="navbar-brand" href="#">Affix24<span> API Marketplace</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-        <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="#usecases">Industries</a></li>
         <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-primary ms-3 px-4" href="#signup">Get Started</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-affix ms-3 px-4" href="#signup" style="color:#fff;">Get Started</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-bg">
-  <div class="container">
-    <h1 class="display-5 fw-bold mb-3">APIs as a Service for Modern Businesses</h1>
-    <p class="lead mb-4">Unleash innovation, accelerate digital transformation, and scale your business with industry-focused APIs — discover, subscribe, and integrate in minutes.</p>
-    <a href="#signup" class="btn btn-primary btn-lg px-5 py-2 shadow-sm">Start Free</a>
-    <div class="mt-4">
-      <span class="industry-badge">For Developers, SaaS, and Enterprise Teams</span>
+<section class="hero-section">
+  <div class="container py-5 hero-content">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-headline mb-2">Build, Connect, <br>and Scale with APIs as a Service</div>
+        <div class="hero-lead mb-4">
+          <span>Discover secure, industry-specific APIs for healthcare, finance, HR, and more.<br>Power your business with lightning-fast integration—no infrastructure hassle.</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#signup" class="btn btn-affix btn-lg shadow">Start Free</a>
+          <a href="#features" class="btn btn-outline-light btn-lg ms-2">Explore Features</a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <!-- Replace the image below with your own branding/hero illustration -->
+        <img src="https://assets-global.website-files.com/5d4bc7b7a5c1b3723427d388/62c6f3a30b54c94f7ec8fd0d_Agora%20Product%20Hero%20Graphic.svg"
+             alt="API Marketplace illustration" class="img-fluid" style="max-width: 410px;">
+      </div>
     </div>
   </div>
+  <div class="hero-art"></div>
 </section>
 
-<!-- Features Section -->
-<section class="container py-5" id="features">
-  <div class="text-center mb-5">
-    <div class="section-title">Why Choose Affix24?</div>
-    <div class="mb-2 text-muted">APIs that deliver real business outcomes, trusted by digital leaders.</div>
-  </div>
+<!-- Floating Cards (Key Features) -->
+<section class="container affix-cards" id="features">
   <div class="row g-4">
     <div class="col-md-4">
-      <div class="card h-100 text-center">
-        <div class="card-body">
-          <span class="icon-circle mb-2"><i class="bi bi-grid"></i></span>
-          <h5 class="card-title fw-bold mb-2">Curated API Catalog</h5>
-          <p class="card-text">Discover high-quality, pre-built APIs across medical, finance, HR, retail, and more. Find what you need instantly, with full documentation and SDKs.</p>
-        </div>
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-grid"></i>
+        <h5 class="fw-bold mt-2 mb-2">Curated API Catalog</h5>
+        <p>Ready-to-integrate APIs for every industry, with full docs & SDKs. Discover what you need in seconds.</p>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card h-100 text-center">
-        <div class="card-body">
-          <span class="icon-circle mb-2"><i class="bi bi-lock"></i></span>
-          <h5 class="card-title fw-bold mb-2">Enterprise-Grade Security</h5>
-          <p class="card-text">All APIs are delivered through a secure gateway with authentication, rate-limiting, compliance, and logging—giving you peace of mind.</p>
-        </div>
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-lock"></i>
+        <h5 class="fw-bold mt-2 mb-2">Enterprise-Grade Security</h5>
+        <p>Hardened API gateway, rate-limiting, and full compliance with HIPAA, PCI, GDPR. Peace of mind, built-in.</p>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card h-100 text-center">
-        <div class="card-body">
-          <span class="icon-circle mb-2"><i class="bi bi-lightning-charge"></i></span>
-          <h5 class="card-title fw-bold mb-2">Instant Integration</h5>
-          <p class="card-text">Subscribe and integrate in minutes. Plug-and-play APIs mean faster launches, reduced costs, and true business agility.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Benefits & How it Works -->
-<section class="bg-light-alt py-5">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <h2 class="section-title mb-3">Benefits at a Glance</h2>
-        <ul class="api-feature-list list-unstyled mb-4">
-          <li>Accelerate time-to-market with proven API products</li>
-          <li>Centralized dashboard: track usage, billing, and performance</li>
-          <li>Flexible pricing, transparent billing, no hidden fees</li>
-          <li>Compliance-ready for HIPAA, PCI, GDPR, and more</li>
-          <li>Dedicated support and onboarding resources</li>
-        </ul>
-        <a href="#signup" class="btn btn-outline-primary px-4">Explore the API Catalog</a>
-      </div>
-      <div class="col-lg-6 text-center">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" 
-             alt="API Integration" class="img-fluid rounded shadow-lg" style="max-width: 400px;">
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-lightning-charge"></i>
+        <h5 class="fw-bold mt-2 mb-2">Instant Integration</h5>
+        <p>Plug-and-play, self-serve onboarding. Connect in minutes—no infrastructure to maintain, no hidden complexity.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Industry Use Cases -->
-<section class="container py-5" id="industries">
-  <div class="text-center mb-5">
-    <div class="section-title">Industry Use Cases</div>
-    <div class="mb-2 text-muted">Solve real-world problems with APIs built for your business domain.</div>
+<section class="container py-5" id="usecases">
+  <div class="section-title text-center mb-4">
+    <span>Industry Solutions<span class="dot">.</span></span>
   </div>
-  <div class="row g-4">
+  <div class="row">
     <div class="col-md-4">
-      <div class="card h-100 border-0 shadow-sm">
-        <div class="card-body">
-          <span class="icon-circle"><i class="bi bi-heart-pulse"></i></span>
-          <h5 class="fw-bold mb-2">Medical</h5>
-          <ul class="list-unstyled mb-0">
-            <li>Transcription & SOAP notes</li>
-            <li>Appointment scheduling</li>
-            <li>HIPAA-compliant messaging</li>
-          </ul>
-        </div>
+      <div class="use-case-card h-100 text-center">
+        <i class="bi bi-heart-pulse"></i>
+        <h6 class="fw-bold mt-2 mb-1">Healthcare</h6>
+        <div>Transcription, SOAP notes, scheduling, and HIPAA-compliant messaging.</div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card h-100 border-0 shadow-sm">
-        <div class="card-body">
-          <span class="icon-circle"><i class="bi bi-currency-dollar"></i></span>
-          <h5 class="fw-bold mb-2">Finance</h5>
-          <ul class="list-unstyled mb-0">
-            <li>Payments, KYC, reporting</li>
-            <li>Fraud detection</li>
-            <li>Regulatory compliance</li>
-          </ul>
-        </div>
+      <div class="use-case-card h-100 text-center">
+        <i class="bi bi-currency-dollar"></i>
+        <h6 class="fw-bold mt-2 mb-1">Finance</h6>
+        <div>Payments, KYC, reporting, and fraud detection—all API-powered.</div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card h-100 border-0 shadow-sm">
-        <div class="card-body">
-          <span class="icon-circle"><i class="bi bi-people"></i></span>
-          <h5 class="fw-bold mb-2">HR & Retail</h5>
-          <ul class="list-unstyled mb-0">
-            <li>Onboarding, payroll, compliance</li>
-            <li>Real-time inventory & order status</li>
-            <li>Product catalog APIs</li>
-          </ul>
-        </div>
+      <div class="use-case-card h-100 text-center">
+        <i class="bi bi-people"></i>
+        <h6 class="fw-bold mt-2 mb-1">HR & Retail</h6>
+        <div>Onboarding, payroll, compliance, inventory, order status, product catalog APIs.</div>
       </div>
     </div>
   </div>
-  <div class="row g-4 mt-3">
+  <div class="row mt-2">
     <div class="col-md-6">
-      <div class="card h-100 border-0 shadow-sm">
-        <div class="card-body">
-          <span class="icon-circle"><i class="bi bi-truck"></i></span>
-          <h5 class="fw-bold mb-2">Supply Chain</h5>
-          <ul class="list-unstyled mb-0">
-            <li>Shipment tracking</li>
-            <li>Partner integration APIs</li>
-          </ul>
-        </div>
+      <div class="use-case-card h-100 text-center">
+        <i class="bi bi-truck"></i>
+        <h6 class="fw-bold mt-2 mb-1">Supply Chain</h6>
+        <div>Shipment tracking, partner integration, and real-time visibility via API.</div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card h-100 border-0 shadow-sm">
-        <div class="card-body">
-          <span class="icon-circle"><i class="bi bi-shield-check"></i></span>
-          <h5 class="fw-bold mb-2">Insurance</h5>
-          <ul class="list-unstyled mb-0">
-            <li>Claims processing</li>
-            <li>Fraud detection</li>
-          </ul>
-        </div>
+      <div class="use-case-card h-100 text-center">
+        <i class="bi bi-shield-check"></i>
+        <h6 class="fw-bold mt-2 mb-1">Insurance</h6>
+        <div>Claims processing, fraud detection, policy APIs, and compliance.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Platform Structure -->
-<section class="bg-light-alt py-5" id="platform">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="section-title">A Platform Built for Simplicity and Scale</div>
+<section class="container py-5" id="platform">
+  <div class="section-title text-center mb-5">
+    <span>The Affix24 Platform<span class="dot">.</span></span>
+  </div>
+  <div class="row platform-cards">
+    <div class="col-md-3">
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-browser-chrome"></i>
+        <h6 class="fw-bold mt-2 mb-2">Developer Portal</h6>
+        <div>Browse, test, and subscribe via a seamless self-service portal—no sales calls.</div>
+      </div>
     </div>
-    <div class="row text-center g-4">
-      <div class="col-md-3">
-        <div class="card h-100 border-0">
-          <div class="card-body">
-            <span class="icon-circle"><i class="bi bi-browser-chrome"></i></span>
-            <h6 class="fw-bold mb-2">Developer Portal</h6>
-            <p class="small mb-0">Browse, test, and subscribe to APIs with a seamless self-service portal.</p>
-          </div>
-        </div>
+    <div class="col-md-3">
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-shield-lock"></i>
+        <h6 class="fw-bold mt-2 mb-2">Secure API Gateway</h6>
+        <div>Authentication, rate-limiting, and analytics with every call—keep your business secure.</div>
       </div>
-      <div class="col-md-3">
-        <div class="card h-100 border-0">
-          <div class="card-body">
-            <span class="icon-circle"><i class="bi bi-shield-lock"></i></span>
-            <h6 class="fw-bold mb-2">API Gateway</h6>
-            <p class="small mb-0">Hardened security, real-time monitoring, and advanced analytics for all your API traffic.</p>
-          </div>
-        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-bar-chart"></i>
+        <h6 class="fw-bold mt-2 mb-2">Centralized Dashboard</h6>
+        <div>See API keys, usage, and billing in one place. Control and insight at your fingertips.</div>
       </div>
-      <div class="col-md-3">
-        <div class="card h-100 border-0">
-          <div class="card-body">
-            <span class="icon-circle"><i class="bi bi-card-list"></i></span>
-            <h6 class="fw-bold mb-2">Centralized Dashboard</h6>
-            <p class="small mb-0">One place to manage API keys, monitor usage, and optimize performance.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card h-100 border-0">
-          <div class="card-body">
-            <span class="icon-circle"><i class="bi bi-bar-chart"></i></span>
-            <h6 class="fw-bold mb-2">Analytics & Insights</h6>
-            <p class="small mb-0">Gain deep visibility into usage trends, costs, and API health—no guesswork.</p>
-          </div>
-        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="affix-card text-center h-100">
+        <i class="bi bi-lightbulb"></i>
+        <h6 class="fw-bold mt-2 mb-2">Analytics & Insights</h6>
+        <div>Track usage trends, performance, and costs—make data-driven decisions with ease.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA Section -->
-<section class="container text-center py-5" id="signup">
-  <h2 class="section-title mb-3">Ready to Power Up Your Business?</h2>
-  <p class="mb-4 fs-5">Create your free developer account, explore the Affix24 API Marketplace, and transform the way you build and deliver solutions.</p>
-  <a href="#" class="btn btn-primary btn-lg px-5 py-2">Get Started Now</a>
-  <div class="mt-3 text-muted">No credit card required. Instant access.</div>
+<section class="cta-section container" id="signup">
+  <div class="section-title mb-2">Supercharge Your Business with Affix24 APIs</div>
+  <p class="mb-4 fs-5 text-white-50">Create your free developer account, explore our marketplace, and launch your next integration in minutes. No credit card required.</p>
+  <a href="#" class="btn btn-affix btn-lg shadow">Get Started Now</a>
 </section>
 
 <!-- Footer -->
 <footer>
   <div class="container text-center">
     <div class="mb-2">
-      &copy; 2025 Affix24 API Marketplace &mdash; <span class="text-info">Seamless APIs, Infinite Possibilities</span>
+      &copy; 2025 Affix24 API Marketplace – <span class="text-info">Seamless APIs, Infinite Possibilities</span>
     </div>
     <div>
       <a href="#features" class="footer-link">Features</a>
-      <a href="#industries" class="footer-link">Industries</a>
+      <a href="#usecases" class="footer-link">Industries</a>
       <a href="#platform" class="footer-link">Platform</a>
       <a href="#signup" class="footer-link">Sign Up</a>
     </div>
   </div>
 </footer>
 
-<!-- Bootstrap Icons & JS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
