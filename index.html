@@ -104,16 +104,10 @@
     }
     /* Floating cards */
     .affix-cards {
-      margin-top: -90px;
-      z-index: 20;
-      position: relative;
-    }
-    .affix-cards {
       margin-top: 0;
       z-index: 20;
       position: relative;
     }
-
     .affix-card {
       background: var(--affix-glass);
       border-radius: 1.6rem;
@@ -200,12 +194,18 @@
         <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
         <li class="nav-item"><a class="nav-link" href="#usecases">Industries</a></li>
         <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-affix ms-3 px-4" href="#signup" style="color:#fff;">Get Started</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="dev_portal.html" target="_blank">
+            <i class="bi bi-box-arrow-in-right"></i> Developer Portal
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-affix ms-3 px-4" href="#signup" style="color:#fff;">Get Started</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
 
 <!-- Hero Section -->
 <section class="hero-section">
@@ -218,6 +218,9 @@
         </div>
         <div class="hero-btns">
           <a href="#signup" class="btn btn-affix btn-lg shadow">Start Free</a>
+          <a href="dev_portal.html" class="btn btn-outline-light btn-lg ms-2" target="_blank">
+            <i class="bi bi-code-slash"></i> Developer Portal
+          </a>
           <a href="#features" class="btn btn-outline-light btn-lg ms-2">Explore Features</a>
         </div>
       </div>
@@ -364,6 +367,9 @@
   <div class="section-title mb-2">Supercharge Your Business with Affix24 APIs</div>
   <p class="mb-4 fs-5 text-white-50">Create your free developer account, explore our marketplace, and launch your next integration in minutes. No credit card required.</p>
   <a href="#" class="btn btn-affix btn-lg shadow">Get Started Now</a>
+  <a href="dev_portal.html" class="btn btn-outline-light btn-lg shadow ms-2" target="_blank">
+    <i class="bi bi-code-slash"></i> Developer Portal
+  </a>
 </section>
 
 <!-- Footer -->
@@ -377,6 +383,7 @@
       <a href="#usecases" class="footer-link">Industries</a>
       <a href="#platform" class="footer-link">Platform</a>
       <a href="#signup" class="footer-link">Sign Up</a>
+      <a href="dev_portal.html" class="footer-link" target="_blank"><i class="bi bi-code-slash"></i> Developer Portal</a>
     </div>
   </div>
 </footer>
